@@ -247,7 +247,7 @@ class App {
 
   _movetoWorkout(e) {
     const workoutElement = e.target.closest('.workout');
-    if (!workoutElement) return;
+    if (!workoutElement || e.target.classList.contains('workout__btn')) return;
 
     const workout = this.#workouts.find(
       item => item.id === workoutElement.dataset.id
